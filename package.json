@@ -1,0 +1,29 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.15.0"
+  },
+  "scripts": {
+    "bootstrap": "yarn bootstrap:dev",
+    "bootstrap:dev": "yarn && yarn install:dev",
+    "bootstrap:dev:all": "yarn bootstrap:dev && yarn pip:install:all",
+    "pip:install:prod": "yarn lerna run pip:install:prod ",
+    "pip:install:test": "yarn lerna run pip:install:test",
+    "pip:install:docs": "yarn lerna run pip:install:docs",
+    "pip:install:all": "yarn lerna run pip:install:all",
+    "install:dev": "yarn lerna run pip:install:dev --concurrency 1",
+    "install:prod": "yarn lerna run pip:install:prod --concurrency 1",
+    "install:test": "yarn lerna run pip:install:test --concurrency 1",
+    "run:extractor": "yarn bootstrap && python /code/packages/extractor/src/extractor/main.py",
+    "bump:patch": "yarn lerna version --force-publish=* --no-git-tag-version patch && yarn postversion",
+    "bump:minor": "yarn lerna version --force-publish=* --no-git-tag-version minor && yarn postversion",
+    "bump:dev:minor": "yarn lerna version --force-publish=* --no-git-tag-version --preid dev preminor && yarn postversion"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "packages/"
+    ],
+    "ext": "py"
+  }
+}

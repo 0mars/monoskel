@@ -1,0 +1,25 @@
+*.py[cod]
+*.egg
+*.egg-info
+.idea
+.DS_Store
+.coverage
+.cache
+.pytest_cache
+.mypy_cache
+htmlcov/
+dist/
+build/
+docs/_build/
+.docker/data/
+.venv
+.env
+de-en.tmx
+
+node_modules
+
+# pants
+.pants.d
+dist
+.pids
+.pants.workdir.file_lock

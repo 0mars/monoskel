@@ -1,0 +1,29 @@
+{
+  "name": "product_manager",
+  "version": "0.1.0",
+  "description": "manages products",
+  "keywords": [
+    "product_manager"
+  ],
+  "author": "Omar Shaban <omars@php.net>",
+  "private": true,
+  "dependencies": {
+    "registry": "0.1.0"
+  },
+  "scripts": {
+    "pip:install:dev": "pip install -e . ",
+    "pip:install:prod": "pip install .",
+    "pip:install:test": "pip install .[test]",
+    "postversion": "yarn propagate:version",
+    "propagate:version": "python -m monomanage.propagate.versions",
+    "pypi:build": "python setup.py sdist bdist_wheel",
+    "pypi:clean": "python -m monomanage.clean.core",
+    "pypi:upload": "twine upload dist/*"
+  },
+  "nodemonConfig": {
+    "ext": "py",
+    "execMap": {
+      "py": "python"
+    }
+  }
+}

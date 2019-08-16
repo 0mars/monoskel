@@ -1,0 +1,32 @@
+################################################################################
+# This requirements file has been automatically generated from `Pipfile` with
+# `pipenv-to-requirements`
+#
+#
+# This has been done to maintain backward compatibility with tools and services
+# that do not support `Pipfile` yet.
+#
+# Do NOT edit it directly, use `pipenv install [-d]` to modify `Pipfile` and
+# `Pipfile.lock` and then regenerate `requirements*.txt`.
+################################################################################
+
+apispec==2.0.2
+bcrypt==3.1.7
+cffi==1.12.3
+cython==0.29.12
+decorator==4.4.0
+falcon-apispec==0.3.0
+falcon-swagger-ui==1.1.2
+falcon==2.0.0
+gevent==1.4.0
+greenlet==0.4.15
+gunicorn==19.9.0
+jinja2==2.10.1
+markupsafe==1.1.1
+marshmallow==2.19.5
+object-graph-builder==0.0.2
+pinject==0.14.1
+psycopg2==2.8.3
+pycparser==2.19
+pyyaml==5.1.1
+six==1.12.0

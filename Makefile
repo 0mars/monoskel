@@ -30,6 +30,8 @@ bash:
 zsh:
 	docker-compose exec $(TARGET_ARGS) zsh
 
+clean:
+	docker-compose stop; docker-compose rm -svf
 
 bootstrap:
 	yarn bootstrap

@@ -8,7 +8,8 @@
   "author": "Omar Shaban <omars@php.net>",
   "private": true,
   "dependencies": {
-    "registry": "0.1.0"
+    "registry": "0.1.0",
+    "injector_provider": "0.0.1"
   },
   "scripts": {
     "pip:install:dev": "pip install -e . ",

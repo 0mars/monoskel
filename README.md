@@ -7,7 +7,11 @@ make start
 ```  
  
  ### new REST resource
- see health resource incode, example is something like:
+see https://github.com/ihiji/falcon-marshmallow
+for object serialization/deserialization
+
+
+add swagger resource
  ```python
  # schema  
 class HealthSchema(Schema):  

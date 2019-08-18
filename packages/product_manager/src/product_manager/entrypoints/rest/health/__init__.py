@@ -21,9 +21,7 @@ class HealthCheck:
                         200:
                             description: status response
                             schema: HealthSchema
-                """
+        """
         resp.status = falcon.HTTP_200
         resp.body = json.dumps({"status": resp.status, "message": "healthy"})
-
-health_check = HealthCheck()
 

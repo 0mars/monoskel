@@ -10,7 +10,7 @@ class SwaggerService(BootableService):
         from product_manager.entrypoints.rest.swagger import SwaggerResource
 
         falcon = container.get(settings.Props.FALCON)
-        swagger_resource = SwaggerResource()
+        swagger_resource = SwaggerResource(container.get(settings.Props.DI_CONTAINER_BUILDER))
         falcon.add_route('/api/swagger.json', swagger_resource)
 
         page_title = 'Swagger UI'

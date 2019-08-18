@@ -10,7 +10,7 @@ class HealthService(BootableService):
 
         provider = container.get(settings.Props.DI_CONTAINER_BUILDER)
         provider.add_configurator(HealthConfigurator())
-        
+
         injector = provider.get_injector()
 
         health_check = injector.get(HealthCheck)

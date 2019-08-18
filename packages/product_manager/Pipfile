@@ -16,6 +16,7 @@ falcon-apispec = "*"
 falcon-swagger-ui = "*"
 injector = "*"
 pipenv-to-requirements = "*"
+falcon-marshmallow = "*"
 
 [dev-packages]
 pytest = "*"

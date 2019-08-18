@@ -12,21 +12,27 @@
 
 apispec==2.0.2
 bcrypt==3.1.7
+certifi==2019.6.16
 cffi==1.12.3
-cython==0.29.12
-decorator==4.4.0
+cython==0.29.13
 falcon-apispec==0.3.0
+falcon-marshmallow==0.2.0
 falcon-swagger-ui==1.1.2
 falcon==2.0.0
 gevent==1.4.0
-greenlet==0.4.15
+greenlet==0.4.15 ; platform_python_implementation == 'CPython'
 gunicorn==19.9.0
+injector==0.17.0
 jinja2==2.10.1
 markupsafe==1.1.1
-marshmallow==2.19.5
-object-graph-builder==0.0.2
-pinject==0.14.1
+marshmallow==2.20.1
+pbr==5.4.2
+pipenv-to-requirements==0.8.2
+pipenv==2018.11.26
 psycopg2==2.8.3
 pycparser==2.19
-pyyaml==5.1.1
+pyyaml==5.1.2
+simplejson==3.16.0
 six==1.12.0
+virtualenv-clone==0.5.3
+virtualenv==16.7.3

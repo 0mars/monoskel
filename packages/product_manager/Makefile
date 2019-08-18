@@ -25,6 +25,8 @@ bash:
 logs:
 	docker-compose logs -f $(TARGET_ARGS)
 
+local:
+	pipenv sync
 
 # app
 freeze:

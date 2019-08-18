@@ -15,11 +15,11 @@ class SwaggerService(BootableService):
 
         page_title = 'Swagger UI'
         favicon_url = 'https://falconframework.org/favicon-32x32.png'
-        swaggerui_url = '/api/docs'  # without trailing slash
+        swagger_ui_url = '/api/docs'  # without trailing slash
         schema_url = '{}/api/swagger.json'.format(container.get(settings.Props.APP_URL))
 
         register_swaggerui_app(
-            falcon, swaggerui_url, schema_url,
+            falcon, swagger_ui_url, schema_url,
             page_title=page_title,
             favicon_url=favicon_url,
             config={'supportedSubmitMethods': ['get', 'post', 'put'], }

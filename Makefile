@@ -30,6 +30,8 @@ bash:
 zsh:
 	docker-compose exec $(TARGET_ARGS) zsh
 
+clean:
+	docker-compose stop; docker-compose rm -svf
 
 bootstrap:
 	yarn bootstrap
@@ -40,9 +42,8 @@ run-catalog:
 nodemon-catalog:
 	nodemon --exec make `run-catalog`
 
-some_recipe: bootstrap
-	@cd /code/packages/catalog/; python main.py && echo "success!" || { echo "failure!"; exit 0; }
-
+own:
+	sudo chown -R $(USER) ./
 
 restart:
 	docker-compose stop $(TARGET_ARGS) && docker-compose start $(TARGET_ARGS)

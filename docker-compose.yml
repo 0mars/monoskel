@@ -6,8 +6,7 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./packages/product_manager
-    env_file: ./packages/product_manager/.env
-    environment: # dont forget .env
+    environment:
       - KAFKA_VERSION=2.2.0
       - LOG_TAG_SERVICE=product_manager
       - ENVIRONMENT=DEVELOPMENT

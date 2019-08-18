@@ -2,7 +2,7 @@ FROM python:3.7-alpine
 
 ENV PYTHONUNBUFFERED 1
 
-RUN apk add --no-cache make build-base libffi-dev libressl-dev nodejs npm protobuf git zsh postgresql-dev && \
+RUN apk add --no-cache make build-base libffi-dev libressl-dev nodejs npm protobuf git zsh postgresql-dev util-linux && \
     rm -f /tmp/* /etc/apk/cache/*
 
 RUN sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"

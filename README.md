@@ -1,17 +1,16 @@
-
-# Mono Python Repo [REST over Falcon]  
+# Mono Python Repo [REST over Falcon] - WIP  
   
-### installation  
+### Setup  
 ```bash  
 make start  
 ```  
  
- ### new REST resource
+ ### New REST resource
+- object definition, validation, serialization/deserialization
 see https://github.com/ihiji/falcon-marshmallow
-for object serialization/deserialization
 
 
-add swagger resource
+- add swagger resource
  ```python
  # schema  
 class HealthSchema(Schema):  
@@ -39,6 +38,32 @@ self.spec.components.schema('Health', schema=injector.get(HealthSchema))
 self.spec.path(resource=injector.get(HealthCheck))
  ```
  
-### usage  
+### Usage  
 Swagger UI:  
 http://localhost:8021/api/docs
+
+### Creating a new service container [WIP]
+must run the following to install dependencies before running the application, 
+should be part of the container entrypoint, see packages/meerkat/entrypoint.sh, and meerkat/Makefile
+```bash
+make bootstrap
+```
+
+### helpful commands
+
+-- restart meerkat container
+```bash
+make restart meerkat
+```
+
+-- rebuild meerkat container
+```bash
+make clean-restart meerkat
+```
+
+-- remove all containers
+```bash
+make clean
+```
+
+*Note:* please read Makefile for more commands, also Makefile under meerkat/

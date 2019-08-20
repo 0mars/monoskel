@@ -5,8 +5,10 @@ $(eval $(TARGET_ARGS):;@:)
 
 -include .env
 
+# containers
+
 start:
-	sudo rm -rf .docker/data/zk/* && docker-compose up -d
+	sudo rm -rf .data/zk/* && docker-compose up -d
 
 stop:
 	docker-compose stop
@@ -16,7 +18,6 @@ start-prod:
 
 rebuild:
 	docker-compose build --force-rm $(TARGET_ARGS)
-
 
 logs:
 	docker-compose logs -f $(TARGET_ARGS)
@@ -33,6 +34,12 @@ zsh:
 clean:
 	docker-compose stop; docker-compose rm -svf
 
+restart:
+	docker-compose stop $(TARGET_ARGS) && docker-compose start $(TARGET_ARGS)
+
+clean-restart:
+	docker-compose stop $(TARGET_ARGS) && docker-compose rm -f $(TARGET_ARGS) && make rebuild $(TARGET_ARGS) && docker-compose up -d
+
 bootstrap:
 	yarn bootstrap
 
@@ -45,8 +52,3 @@ nodemon-catalog:
 own:
 	sudo chown -R $(USER) ./
 
-restart:
-	docker-compose stop $(TARGET_ARGS) && docker-compose start $(TARGET_ARGS)
-
-clean-restart:
-	docker-compose stop $(TARGET_ARGS) && docker-compose rm -f $(TARGET_ARGS) && make rebuild $(TARGET_ARGS) && docker-compose up -d

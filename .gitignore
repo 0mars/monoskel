@@ -18,8 +18,7 @@ de-en.tmx
 
 node_modules
 
-# pants
-.pants.d
-dist
-.pids
-.pants.workdir.file_lock
+.data
+.docker/logs
+
+yarn.lock

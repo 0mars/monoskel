@@ -9,16 +9,16 @@ from falcon.response import Response
 from falcon_apispec import FalconPlugin
 
 
-from product_manager.entrypoints.rest.health import HealthSchema, HealthCheck
+from meerkat.entrypoints.rest.health import HealthSchema, HealthCheck
 
 
 class SwaggerResource:
     def __init__(self, injector):
-        from product_manager.configurations.app.settings import Props
-        from product_manager.configurations.app.main import app
-        from product_manager.configurations.app.main import container
+        from meerkat.configurations.app.settings import Props
+        from meerkat.configurations.app.main import app
+        from meerkat.configurations.app.main import container
         # todo: should be moved to env vars
-        self.spec = APISpec(title='product_manager',
+        self.spec = APISpec(title='meerkat',
                             version='1.0.0',
                             openapi_version='2.0',
                             plugins=[

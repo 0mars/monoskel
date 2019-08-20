@@ -6,8 +6,8 @@ from falcon_swagger_ui import register_swaggerui_app
 
 class SwaggerService(BootableService):
     def boot(self, container: Container):
-        from product_manager.configurations.app import settings
-        from product_manager.entrypoints.rest.swagger import SwaggerResource
+        from meerkat.configurations.app import settings
+        from meerkat.entrypoints.rest.swagger import SwaggerResource
 
         falcon = container.get(settings.Props.FALCON)
         swagger_resource = SwaggerResource(container.get(settings.Props.DI_CONTAINER_BUILDER))

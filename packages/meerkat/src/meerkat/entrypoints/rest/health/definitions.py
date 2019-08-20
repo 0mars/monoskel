@@ -1,4 +1,4 @@
-from product_manager.entrypoints.rest.health import HealthCheck
+from meerkat.entrypoints.rest.health import HealthCheck
 from injector import Module, singleton, provider
 
 

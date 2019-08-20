@@ -1,9 +1,9 @@
 {
-  "name": "product_manager",
+  "name": "meerkat",
   "version": "0.1.0",
   "description": "manages products",
   "keywords": [
-    "product_manager"
+    "meerkat"
   ],
   "author": "Omar Shaban <omars@php.net>",
   "private": true,

@@ -1,7 +1,7 @@
 import falcon
 from injector_provider.providers import InjectorProvider
-from product_manager.configurations.app import settings
-from product_manager.configurations.app.middlewares import RequireJSON
+from meerkat.configurations.app import settings
+from meerkat.configurations.app.middlewares import RequireJSON
 from falcon_marshmallow import Marshmallow
 from registry.services import Container, Registry
 

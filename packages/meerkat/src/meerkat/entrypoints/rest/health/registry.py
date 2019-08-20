@@ -1,7 +1,7 @@
-from product_manager.configurations.app import settings
-from product_manager.entrypoints.rest.health.definitions import HealthConfigurator
+from meerkat.configurations.app import settings
+from meerkat.entrypoints.rest.health.definitions import HealthConfigurator
 from registry.services import BootableService, Container
-from product_manager.entrypoints.rest.health import HealthCheck
+from meerkat.entrypoints.rest.health import HealthCheck
 
 
 class HealthService(BootableService):

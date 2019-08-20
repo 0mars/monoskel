@@ -37,10 +37,10 @@ install:
 	pip install -r requirements-dev.txt
 
 run:
-	@cd src; gunicorn -b 0.0.0.0:8000 product_manager.configurations.app.main:app -w 1 -k gevent --reload && echo "success!" || { echo "Crashed!"; exit 0; }
+	@cd src; gunicorn -b 0.0.0.0:8000 meerkat.configurations.app.main:app -w 1 -k gevent --reload && echo "success!" || { echo "Crashed!"; exit 0; }
 
 test:
 	python manage.py test
 
 watch:
-	eval watchexec -r -e 'py' -i './product_manager' "docker-compose up"
+	eval watchexec -r -e 'py' -i './meerkat' "docker-compose up"

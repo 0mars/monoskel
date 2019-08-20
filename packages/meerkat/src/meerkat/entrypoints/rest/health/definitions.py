@@ -5,5 +5,5 @@ from injector import Module, singleton, provider
 class HealthConfigurator(Module):
     @singleton
     @provider
-    def provide_sqlite_connection(self) -> HealthCheck:
+    def provide_health_check_resource(self) -> HealthCheck:
         return HealthCheck()

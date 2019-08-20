@@ -44,7 +44,7 @@ http://localhost:8021/api/docs
 
 ### Creating a new service container [WIP]
 must run the following to install dependencies before running the application, 
-should be part of the container entrypoint, see packages/meerkat/entrypoint.sh, and meerkat/Makefile
+should be part of the container entrypoint, see packages/meerkat/.docker/entrypoint.sh, and meerkat/Makefile
 ```bash
 make bootstrap
 ```

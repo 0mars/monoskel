@@ -11,12 +11,16 @@ services:
       - LOG_TAG_SERVICE=meerkat
       - ENVIRONMENT=DEVELOPMENT
       - APP_URL=http://localhost:8021
+      - MONGO_HOST=skel_db
+      - MONGO_PORT=27017
+      - MONGO_DB=meerkat
     ports:
       - "8000:8000"
     depends_on:
       - skel_zookeeper
       - skel_kafka
       - skel_es
+      - skel_db
     entrypoint:
       - sh
       - .docker/entrypoint.sh
@@ -27,6 +31,7 @@ services:
       - skel_zookeeper
       - skel_kafka
       - skel_es
+      - skel_db
 
   nginx:
     build:

@@ -8,7 +8,7 @@ class Id:
         self.value = value
 
     def is_valid(self):
-        return len(str(self.value)) > 0
+        return len(self.string()) > 0
 
     def string(self):
         return str(self.value)

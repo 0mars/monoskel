@@ -12,6 +12,7 @@
 
 apispec==2.0.2
 bcrypt==3.1.7
+buslane==0.0.5
 certifi==2019.6.16
 cffi==1.12.3
 cython==0.29.13

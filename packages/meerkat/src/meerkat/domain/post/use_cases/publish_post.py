@@ -18,4 +18,4 @@ class PublishPostUseCase:
         post = self.data_provider.get(command.id)
         post.publish()
         self.data_provider.save(post)
-        self.event_bus.publish(event=PostPublished())
+        self.event_bus.publish(event=PostPublished(post))

@@ -9,8 +9,8 @@ class TestObjectGraphBuilder:
         assert isinstance(provider.get_injector(), Injector)
 
     @patch('injector_provider.providers.Injector.__init__')
-    def test_add_class(self, mocked_object_graph_method):
-        mocked_object_graph_method.return_value = None
+    def test_add_class(self, mocked_injector_init):
+        mocked_injector_init.return_value = None
         provider = InjectorProvider()
 
         class Configurator(Module):
@@ -20,4 +20,4 @@ class TestObjectGraphBuilder:
         provider.add_configurator(configurator1)
         provider.get_injector()
 
-        mocked_object_graph_method.assert_called_once_with([configurator1])
+        mocked_injector_init.assert_called_once_with([configurator1])

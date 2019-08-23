@@ -24,8 +24,8 @@ class TestCreatePost:
         use_case = PublishPostUseCase(data_provider_mock, event_bus_mock)
 
         assert post.is_published() is False
-        command = PublishPostCommand(id)
 
+        command = PublishPostCommand(id)
         use_case.exec(command)
 
         data_provider_mock.save.assert_called_once_with(post)

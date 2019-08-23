@@ -40,7 +40,7 @@ run:
 	@cd src; gunicorn -b 0.0.0.0:8000 meerkat.configurations.app.main:app -w 1 -k gevent --reload && echo "success!" || { echo "Crashed!"; exit 0; }
 
 test:
-	python manage.py test
+	pipenv run py.test -s
 
 watch:
 	eval watchexec -r -e 'py' -i './meerkat' "docker-compose up"

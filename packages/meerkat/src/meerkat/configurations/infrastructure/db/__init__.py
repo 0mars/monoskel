@@ -8,7 +8,7 @@ class DataBaseService(BootableService):
         from meerkat.configurations.app.settings import Props
 
         host = container.get(Props.MONGO_HOST)
-        port = container.get(Props.MONGO_PORT)
+        port = int(container.get(Props.MONGO_PORT))
         db = container.get(Props.MONGO_DB)
 
         connect(db, host=host, port=port)

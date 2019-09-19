@@ -14,7 +14,7 @@ class HealthSchema(Schema):
 class HealthCheck:
     # Handles GET requests
     def on_get(self, req, resp):
-        """A cute furry animal endpoint.
+        """Get app health
                 ---
                     summary: Check application health
                     responses:

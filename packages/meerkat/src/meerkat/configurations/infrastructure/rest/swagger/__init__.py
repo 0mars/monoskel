@@ -1,5 +1,4 @@
 import json
-from typing import List
 
 import falcon
 from apispec import APISpec
@@ -8,12 +7,11 @@ from falcon import Request
 from falcon.response import Response
 from falcon_apispec import FalconPlugin
 
-
-from meerkat.entrypoints.rest.health import HealthSchema, HealthCheck
+from meerkat.configurations.infrastructure.rest.health import HealthSchema, HealthCheck
 
 
 class SwaggerResource:
-    def __init__(self, injector):
+    def __init__(self):
         from meerkat.configurations.app.settings import Props
         from meerkat.configurations.app.main import app
         from meerkat.configurations.app.main import container
@@ -25,9 +23,8 @@ class SwaggerResource:
                                 FalconPlugin(app),
                                 MarshmallowPlugin(),
                             ])
-        injector = container.get(Props.DI_CONTAINER_BUILDER).get_injector()
+        injector = container.get(Props.DI_PROVIDER).get_injector()
 
-        # todo: should somehow make a list of schemas, and resources
         self.spec.components.schema('Health', schema=injector.get(HealthSchema))
         self.spec.path(resource=injector.get(HealthCheck))
 

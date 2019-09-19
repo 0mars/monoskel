@@ -1,1 +1,1 @@
-from . import providers
+from .providers import InjectorProvider

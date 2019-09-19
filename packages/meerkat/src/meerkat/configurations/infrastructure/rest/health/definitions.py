@@ -1,5 +1,6 @@
-from meerkat.entrypoints.rest.health import HealthCheck
 from injector import Module, singleton, provider
+
+from meerkat.configurations.infrastructure.rest.health import HealthCheck
 
 
 class HealthConfigurator(Module):

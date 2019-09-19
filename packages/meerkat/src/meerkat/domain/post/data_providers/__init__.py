@@ -3,7 +3,7 @@ from meerkat.domain.post.entities.post import Post
 from meerkat.domain.post.value_objects import Id
 
 
-class PostDataProvider:
+class PostDataProvider(metaclass=abc.ABCMeta):
 
     @abc.abstractmethod
     def save(self, post: Post):
@@ -14,6 +14,7 @@ class PostDataProvider:
             Returns:
                 None
         """
+        pass
 
     @abc.abstractmethod
     def get(self, id: Id) -> Post:
@@ -27,3 +28,4 @@ class PostDataProvider:
             Raises:
                 EntityNotFoundException: if the specified entity cannot be found
         """
+        pass

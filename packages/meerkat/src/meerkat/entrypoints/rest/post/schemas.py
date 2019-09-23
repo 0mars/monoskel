@@ -14,9 +14,6 @@ class PostSchema(Schema):
     @classmethod
     def from_domain_object(cls, post: Post):
         object = cls()
-        # object.id = str(post.id)
-        # object.title = str(post.title)
-        # object.body = str(post.body)
         return object.load({
             "id": str(post.id),
             "title": str(post.title),

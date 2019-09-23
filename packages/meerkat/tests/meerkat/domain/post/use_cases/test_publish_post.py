@@ -10,8 +10,8 @@ from meerkat.domain.post.value_objects import Title, Body, Id
 
 class TestCreatePost:
 
-    @mock.patch('meerkat.domain.post.use_cases.create_post.uuid.uuid4')
-    def test_can_create_post(self, uuid4_mock):
+    @mock.patch('meerkat.domain.post.use_cases.add_new_post.uuid.uuid4')
+    def test_can_publish_post(self, uuid4_mock):
         id = Id(uuid.uuid4())
         post = Post.create(id, Title('post title'), Body('post body'))
         data_provider_mock = mock.Mock()

@@ -24,6 +24,9 @@ class BootableService(ABC):
     def boot(self, container: Container):
         raise NotImplemented('Service not implemented')
 
+    def post_boot(self, container):
+        pass
+
 
 class Registry(object):
     """ Service registry is where to register bootable services to be booted
@@ -38,3 +41,6 @@ class Registry(object):
     def boot(self, container: Container):
         for service in self.services:
             service.boot(container)
+
+        for service in self.services:
+            service.post_boot(container)

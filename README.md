@@ -38,6 +38,9 @@ self.spec.components.schema('Health', schema=injector.get(HealthSchema))
 self.spec.path(resource=injector.get(HealthCheck))
  ```
  
+ Example: 
+ https://github.com/0mars/monoskel/pull/9/files
+ 
 ### Usage  
 Swagger UI:  
 http://localhost:8021/api/docs

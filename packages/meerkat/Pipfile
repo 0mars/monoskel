@@ -18,6 +18,7 @@ injector = "*"
 pipenv-to-requirements = "*"
 falcon-marshmallow = "*"
 mongoengine = "*"
+buslane = "*"
 
 [dev-packages]
 pytest = "*"

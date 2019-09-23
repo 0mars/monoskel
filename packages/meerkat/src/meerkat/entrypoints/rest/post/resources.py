@@ -3,7 +3,6 @@ import logging
 import uuid
 
 import falcon
-from marshmallow import ValidationError
 
 from meerkat.configurations.app.middlewares import HTTPValidationError
 from meerkat.domain.post.use_cases import AddNewPostUseCase, PublishPostUseCase

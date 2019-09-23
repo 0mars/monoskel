@@ -79,8 +79,6 @@ class Post:
                    404:
                        description: Movie does not exist
         """
-        from meerkat.configurations.app.main import app
-        logging.getLogger().info("{} = id".format(id))
 
         command = PublishPostCommand(Id(uuid.UUID(id)))
 

@@ -22,7 +22,8 @@ class PostCollection:
     def on_post(self, req, resp):
         """Add new a post
                 ---
-
+                    tags:
+                        - Posts
                     summary: Add new post
                     consumes:
                         - application/json
@@ -62,22 +63,17 @@ class Post:
     def on_put(self, req: falcon.Request, resp: falcon.Response, id: str) -> None:
         """
                ---
-               summary: Get movie from database
+               summary: Publish post
                tags:
-                   - Movie
+                   - Posts
                parameters:
                    - in: path
-                     schema: MoviePathSchema
+                     name: id
                produces:
                    - application/json
                responses:
-                   200:
-                       description: Return requested movie details
-                       schema: MovieSchema
-                   401:
-                       description: Unauthorized
-                   404:
-                       description: Movie does not exist
+                   204:
+                       description: post published
         """
 
         command = PublishPostCommand(Id(uuid.UUID(id)))

@@ -8,6 +8,8 @@ from falcon.response import Response
 from falcon_apispec import FalconPlugin
 
 from meerkat.configurations.infrastructure.rest.health import HealthSchema, HealthCheck
+from meerkat.entrypoints.rest.post.resources import PostCollection
+from meerkat.entrypoints.rest.post.schemas import PostSchema, AddNewPostSchema
 
 
 class SwaggerResource:
@@ -27,6 +29,10 @@ class SwaggerResource:
 
         self.spec.components.schema('Health', schema=injector.get(HealthSchema))
         self.spec.path(resource=injector.get(HealthCheck))
+
+        self.spec.components.schema('Post', schema=injector.get(PostSchema))
+
+        self.spec.path(resource=injector.get(PostCollection))
 
     def on_get(self, req: Request, resp: Response):
         resp.status = falcon.HTTP_200

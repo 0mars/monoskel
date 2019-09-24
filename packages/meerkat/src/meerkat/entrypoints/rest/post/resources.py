@@ -1,11 +1,14 @@
 import json
+import logging
+import uuid
 
 import falcon
-from marshmallow import ValidationError
 
 from meerkat.configurations.app.middlewares import HTTPValidationError
-from meerkat.domain.post.use_cases import AddNewPostUseCase
+from meerkat.domain.post.use_cases import AddNewPostUseCase, PublishPostUseCase
 from meerkat.domain.post.use_cases.add_new_post import AddNewPostCommand
+from meerkat.domain.post.use_cases.publish_post import PublishPostCommand
+from meerkat.domain.post.value_objects import Id
 from meerkat.entrypoints.rest.post.schemas import PostSchema, AddNewPostSchema
 
 
@@ -19,7 +22,8 @@ class PostCollection:
     def on_post(self, req, resp):
         """Add new a post
                 ---
-
+                    tags:
+                        - Posts
                     summary: Add new post
                     consumes:
                         - application/json
@@ -48,3 +52,32 @@ class PostCollection:
 
         resp.status = falcon.HTTP_201
         resp.body = json.dumps(PostSchema.from_domain_object(post))
+
+
+class Post:
+    schema = PostSchema()
+
+    def __init__(self, publish_post: PublishPostUseCase):
+        self.publish_post_usecase = publish_post
+
+    def on_put(self, req: falcon.Request, resp: falcon.Response, id: str) -> None:
+        """
+               ---
+               summary: Publish post
+               tags:
+                   - Posts
+               parameters:
+                   - in: path
+                     name: id
+               produces:
+                   - application/json
+               responses:
+                   204:
+                       description: post published
+        """
+
+        command = PublishPostCommand(Id(uuid.UUID(id)))
+
+        self.publish_post_usecase.exec(command)
+
+        resp.status = falcon.HTTP_204

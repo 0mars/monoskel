@@ -1,5 +1,3 @@
-import uuid
-
 from meerkat.domain.post.entities.exceptions import PublishingFailedException
 from meerkat.domain.post.value_objects import Title, Body, Id
 

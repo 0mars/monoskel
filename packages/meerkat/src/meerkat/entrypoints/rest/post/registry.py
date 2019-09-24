@@ -1,6 +1,6 @@
 from meerkat.configurations.app import settings
 from meerkat.entrypoints.rest.post.definitions import PostConfigurator
-from meerkat.entrypoints.rest.post.resources import PostCollection
+from meerkat.entrypoints.rest.post.resources import PostCollection, Post
 from registry.services import BootableService, Container
 
 
@@ -16,3 +16,4 @@ class PostService(BootableService):
         injector = provider.get_injector()
 
         falcon.add_route("/v1/posts", injector.get(PostCollection))
+        falcon.add_route("/v1/posts/{id}/publish", injector.get(Post))

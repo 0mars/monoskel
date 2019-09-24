@@ -41,23 +41,18 @@ setup(
     name=package,
     version=version,
     python_requires='>=3.6',
-    author="PyMedPhys Contributors",
-    author_email="developers@pymedphys.com",
+    author="Simon Biggs",
+    author_email="me@simonbiggs.net",
     description='',
     classifiers=[
         'Development Status :: 4 - Beta',
-        'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
         'Programming Language :: Python :: 3.6',
-        'Topic :: Scientific/Engineering :: Medical Science Apps.',
-        'Topic :: Scientific/Engineering :: Physics',
-        'Intended Audience :: Science/Research',
-        'Intended Audience :: Healthcare Industry'
     ],
     packages=packages,
     package_dir={'': source_path},
     include_package_data=True,
     package_data={package: []},
-    license='AGPL-3.0-or-later',
+    license='Apache License 2.0',
     install_requires=install_requires,
     extras_require={
         'test': [

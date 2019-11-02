@@ -70,3 +70,7 @@ make clean
 ```
 
 *Note:* please read Makefile for more commands, also Makefile under meerkat/
+
+#### Credits
+
+PyMedPhys for monomanage, monorepository manager

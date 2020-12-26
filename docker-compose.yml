@@ -17,8 +17,6 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - skel_zookeeper
-      - skel_kafka
       - skel_es
       - skel_db
     entrypoint:
@@ -28,8 +26,6 @@ services:
       - ./:/code
       - /code/packages/meerkat/.venv
     links:
-      - skel_zookeeper
-      - skel_kafka
       - skel_es
       - skel_db
 

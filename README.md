@@ -43,7 +43,7 @@ self.spec.path(resource=injector.get(HealthCheck))
  
 ### Usage  
 Swagger UI:  
-http://localhost:8021/api/docs
+http://localhost:8021/v1/docs
 
 ### Creating a new service container [WIP]
 must run the following to install dependencies before running the application, 

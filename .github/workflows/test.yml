@@ -19,6 +19,7 @@ jobs:
 
       - name: Install dependencies with pipenv
         run: |
+          cd packages/meerkat
           pip install pipenv
           pipenv install --deploy --dev
 
